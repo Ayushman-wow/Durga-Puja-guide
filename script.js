@@ -1,4 +1,5 @@
 
+
 const pandals = {
   asansol: [
     
@@ -76,15 +77,87 @@ const pandals = {
     {
       name: "Gopalmath",
       desc: "Modern decorations; light installations.",
-      img: "https://tse4.mm.bing.net/th/id/OIP.jkuPgrvz-icALTlamXwpQQHaEK?pid=Api",
-      link: "#"  
+      img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npz0tA9CGahF1ePO4p--DnmrYFojzP53e5b8mQ0bl5tkdkmsU9EWvrquX-1JrQoATW_aoJqI3OpoLVtS8kV9c5trOz_ubg8x2b3xygwt95FfZaQbVhaQv0G5H9pYzxrMQyGIkCMUQ=w408-h305-k-no",
+      link: "https://maps.app.goo.gl/PJDdeJMiWa1fEodP9"  
     },
     {
+      name: "Agrani",
+      desc: "Food stalls, community events.",
+      img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqSngmRSLma37BOWoHI8VHesJk2VvW_FtdVsrn8IY31H8zz0kERd5RfpvPx_Ep06mWneJTC8yUBUhIN3Mhvgy1AcBKZ83g3FE1GS3Vmou3lHQMOQs8121sjvqC6U1pb06vQkKw2=w408-h306-k-no",
+      link: "https://maps.app.goo.gl/3hdVKcLa7YKgr2F47"  
+    },
+     {
+      name: "Bhiringi Nabaroon",
+      desc: "Food stalls, community events.",
+      img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nomU5LzkITY8TtVWR3T06Wfuk8PuVVTsol21Ej2u5FOY8SzU6iUYO3CKPlKdgvZpJuwXz6z5IBLK0HBSfb-STOPrPvzg4OVtHPrCRkNUh7xNF7c-4doLQXxvlO0gK9gOkr6H6yaQg=w408-h306-k-no",
+      link: "https://maps.app.goo.gl/bnCqKZQvZoY8KgUe9"  
+    },
+     {
+      name: "Chaturanga ",
+      desc: "Food stalls, community events.",
+      img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nr2rKMGo7LpN4Kx2HsOZB1aEWKzBo8Jlz1NtN7TdBthJqgNRBdjQMEvRwuaD4poEIYlMJVIZ1tYiWgM1sdl6CneKrCpWvOMMDFB7w3ZPS8Fdod6MMAdS_sDXa6ePi57VBuM36Gh=w408-h544-k-no",
+      link: "https://maps.app.goo.gl/GLsqKhrrMriJVH418"  
+    },
+     {
+      name: "Marconi Dakshin Pally ",
+      desc: "Food stalls, community events.",
+      img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqLeZIPx3LSTfbxv_GuMjnszuXZXbDOUhayGAEL04N7XiJPJf53_6joi5enIbLohVSHJ9AFTzh2vhsIJAmn3cEHqTeDTilAonV4SLbu85PxnN_6s40uUZYZduI2oADZ50oWwwgD=w408-h306-k-no",
+      link: "https://maps.app.goo.gl/xc1aKfW36u1UoknX8"  
+    },
+     {
       name: "Fuljhore",
       desc: "Food stalls, community events.",
-      img: "https://tse1.mm.bing.net/th/id/OIP.PCGMBaLdby15HfPB4qogegHaKb?pid=Api",
-      link: "#"  
-    }
+      img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nr16NxPzsVGc_eGpVQRSKDg9dKwZ28gfK9yx4MabRhqFSE_77ebCSePPawK3qBHICIRfqE9uETeYtVHtm-jkIyuWxwkOXp2D-_DBJIli2zFhYzZoK_S6rVieyDbqIncPCPDOSP9_w=w408-h306-k-no",
+      link: "https://maps.app.goo.gl/UZerBHRuMMwnXd8JA"  
+    },
+     {
+      name: "Shankarpur ",
+      desc: "Food stalls, community events.",
+      img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noq0AYIEFRIPQyBHKZR1xMN48KMa6Q2YxA4QdTdKJDPEIFlccfoNxb4x9QVfZyHSUK-2pZEMwMj1ttDreLf2_iSB68YyooOtPiOm-8f7yVXVe6gGqyShe7YjMkKZAXeIW999fM=w408-h520-k-no",
+      link: "https://maps.app.goo.gl/g9VKAkDRaWSJ4aqbA"  
+    },
+     {
+      name: "Buddha Bihar Sarbojanin ",
+      desc: "Food stalls, community events.",
+      img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nprghG4IM-Wg151mNLIx-sa_AQPxpsCrRiR3_BrqOHE2kQPci2Cw6kEXJc3-GOnKqHiWxdtX01xTcLkC4Fjazp8oEjqEt87nLmBzPni72YBYTvY09gWy103Pta2jrhk2lMzHmQ=w408-h306-k-no",
+      link: "https://maps.app.goo.gl/VQLsEe7RdtSPiCe16"  
+    },
+     {
+      name: "Cement Park",
+      desc: "Food stalls, community events.",
+      img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noG0OZ1uFLHiHYE5F43wf5xiH6vzA7WNo9odVTEdqkDEJHGC4jh4uCQmAbmRdvQWhrr-D0ECMRFAkVD3yVlCAGpXsY_zHHAyAidn8aHANi4mJb6ROLZ6TR_DgwH_goiNjpN30yw=w408-h306-k-no",
+      link: "https://maps.app.goo.gl/N4Pz25jeLTabdXKR7"  
+    },
+     {
+      name: "Sepco ",
+      desc: "Food stalls, community events.",
+      img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrtNG4Yxd1wvOB16ZzqWOrep4Zqob4LVOxhCNSHhxcLA3gaCTcxZHHu0uLROET8Z6yrqd2xMuYVAzMMbJZDTyYKiTfSFvFTb10O3EBR3UKI6kxDdGFEWXRDmL-UB4PtWAi0TRRdRw=w408-h306-k-no",
+      link: "https://maps.app.goo.gl/1rXj6n54JeWK4GM4A"  
+    },
+     {
+      name: "Urvashi",
+      desc: "Food stalls, community events.",
+      img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrCpD7fvRtAoaGDNsVZH5pUwJiG3F3e_PTAhuafZw7r--8lHghW8fkiCvhQfAYn81hK5yagFYg-LcdbGldncs30gh_E4HVf8pkgsfF8hBGlisjKN27R89qtU0SM7n67Cjkx9j4fEA=w408-h544-k-no",
+      link: "https://maps.app.goo.gl/G1iLdbMcTdp2X2sK7"  
+    },
+     {
+      name: "Sector 2C",
+      desc: "Food stalls, community events.",
+      img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noM1-PeUQ1pJcuD0v7EIyKVWkMwz4Wg_aEyIAEno8PeoLl_aEZcNwggYQcBDZOanPmcSezGpd7vHivVV5wRbCA_bEIraJ6ULKbWhtw0qi2mxvg6uSucT75LGR_LN_orrQU3DUeI4A=w408-h306-k-no",
+      link: "https://maps.app.goo.gl/n9y2j7aEAWwFYxLQ8"  
+    },
+     {
+      name: "Club Santose",
+      desc: "Food stalls, community events.",
+      img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nody2zQzkPpg25gx2qiZ2Hqlpa1wLIr4v4URw3scL5q39ahIai3cGWx7CNMJuLFmy7yC4k7O3ZJ13_3r6E2lxvq90QS21jt_MopShSpEB6-DYr0G906t2T7dDyHxRwa5-Kev12b=w408-h306-k-no",
+      link: "https://maps.app.goo.gl/iqWFwhfeqzc3EVhr8"  
+    },
+     {
+      name: "Muchipara",
+      desc: "Food stalls, community events.",
+      img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nosORFRg_BvJwFk8vuvYuPx4TDhMHLfxFRPR-L2_bRWFkfRXGoCuyzpN5_b9pTHfgoL6ue_iWSIMBPIVaO1LAFU9-2leqOWzw2r3Aeux49vyWzjUVsDQTvToc13KhNVv_R9Dq-J=w408-h306-k-no",
+      link: "https://maps.app.goo.gl/GENyDz6bUcEz2WTi7"  
+    },
    
   ]
 };
@@ -107,3 +180,4 @@ function render(city) {
     container.appendChild(card);
   });
 }
+
