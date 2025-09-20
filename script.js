@@ -161,21 +161,195 @@ const pandals = {
   ]
 };
 
+
+function createPandalCard(p) {
+  const card = document.createElement("div");
+  card.className = "card pandal-card"; 
+  card.innerHTML = `
+    <img src="${p.img}" alt="${p.name}">
+    <div class="card-content">
+      <h3>${p.name}</h3>
+      <p>${p.desc}</p>
+      <a href="${p.link}" target="_blank">📍 Open Map</a>
+      <div class="whatsapp-btn" onclick="shareWhatsApp('${p.name}', '${p.link}')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Share">
+      </div>
+    </div>
+  `;
+  return card;
+}
+
+
 function render(city) {
   const container = document.getElementById("pandal-list");
   container.innerHTML = "";
   const list = pandals[city] || [];
   list.forEach(p => {
-    const card = document.createElement("div");
-    card.className = "card";
-    card.innerHTML = `
-      <img src="${p.img}" alt="${p.name}">
-      <div class="card-content">
-        <h3>${p.name}</h3>
-        <p>${p.desc}</p>
-        <a href="${p.link}" target="_blank">📍 Open Map</a>
-      </div>
-    `;
+    const card = createPandalCard(p);
     container.appendChild(card);
   });
 }
+
+
+const allPandals = [...pandals.asansol, ...pandals.durgapur];
+
+// Search functionality 
+const searchInput = document.getElementById('search');
+const suggestions = document.getElementById('suggestions');
+const pandalList = document.getElementById('pandal-list');
+
+function renderPandalByName(name) {
+  pandalList.innerHTML = '';
+  allPandals.forEach(p => {
+    if(name === '' || p.name.toLowerCase().includes(name.toLowerCase())){
+      const card = createPandalCard(p); // use same structure for WhatsApp button
+      pandalList.appendChild(card);
+    }
+  });
+}
+
+searchInput.addEventListener('input', () => {
+  const term = searchInput.value.toLowerCase();
+  suggestions.innerHTML = '';
+
+  if(term === ''){
+    suggestions.style.display = 'none';
+    renderPandalByName(''); // show all pandals
+    return;
+  }
+
+  const filtered = allPandals.filter(p => p.name.toLowerCase().includes(term));
+
+  filtered.forEach(p => {
+    const li = document.createElement('li');
+    li.textContent = p.name;
+    li.addEventListener('click', () => {
+      searchInput.value = p.name;
+      suggestions.style.display = 'none';
+      renderPandalByName(p.name); // show only clicked pandal
+    });
+    suggestions.appendChild(li);
+  });
+
+  suggestions.style.display = filtered.length ? 'block' : 'none';
+});
+
+
+document.addEventListener('click', (e) => {
+  if(!e.target.closest('.search-container')) suggestions.style.display = 'none';
+});
+
+
+//  LEAFLET MAP 
+const map = L.map("route-map").setView([23.7, 86.95], 12);
+
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution:
+    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+}).addTo(map);
+
+const redIcon = L.icon({
+  iconUrl: "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
+  iconSize: [32, 32],
+  iconAnchor: [16, 32],
+  popupAnchor: [0, -32],
+});
+
+// ==================== PANADAL DATA ====================
+const allpandals = [
+  // Asansol
+  { name: "Kalyanpur Scheme-2", lat: 23.704, lng: 86.956 },
+  { name: "Kalyanpur Adi Puja", lat: 23.7019, lng: 86.9582 },
+  { name: "K-sector Kalyanpur Housing", lat: 23.6998, lng: 86.9586 },
+  { name: "Rabindranagar", lat: 23.6884, lng: 86.9444 },
+  { name: "Radhanagar Road Athletic Club", lat: 23.6861, lng: 86.9403 },
+  { name: "Court Road Puja Committee", lat: 23.6914, lng: 86.9473 },
+  { name: "Netaji Sporting Club, Burnpur", lat: 23.6724, lng: 86.9445 },
+  { name: "Gandhinagar / Panchgachia", lat: 23.7273, lng: 86.9524 },
+  { name: "Dheomain Colliery", lat: 23.7045, lng: 86.9088 },
+  { name: "Gopalpur", lat: 23.7004, lng: 86.9319 },
+  { name: "Apcar Garden", lat: 23.6942, lng: 86.9543 },
+  // Durgapur
+  { name: "Gopalmath", lat: 23.5753, lng: 87.2334 },
+  { name: "Agrani", lat: 23.5604, lng: 87.2746 },
+  { name: "Bhiringi Nabaroon", lat: 23.5487, lng: 87.2707 },
+  { name: "Chaturanga", lat: 23.5429, lng: 87.3019 },
+  { name: "Marconi Dakshin Pally", lat: 23.5665, lng: 87.3117 },
+  { name: "Fuljhore", lat: 23.5362, lng: 87.3364 },
+  { name: "Shankarpur", lat: 23.5281, lng: 87.3574 },
+  { name: "Buddha Bihar Sarbojanin", lat: 23.5517, lng: 87.3110 },
+  { name: "Cement Park", lat: 23.5400, lng: 87.2936 },
+  { name: "Sepco", lat: 23.5501, lng: 87.3166 },
+  { name: "Urvashi", lat: 23.5365, lng: 87.3048 },
+  { name: "Sector 2C", lat: 23.5117, lng: 87.3546 },
+  { name: "Club Santose", lat: 23.5114, lng: 87.3531 },
+  { name: "Muchipara", lat: 23.5062, lng: 87.3519 },
+];
+
+
+// Dark mode map tiles
+const darkTiles = L.tileLayer(
+  "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+  {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
+  }
+);
+
+
+const lightTiles = L.tileLayer(
+  "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+  {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  }
+);
+
+
+lightTiles.addTo(map);
+
+allpandals.forEach((pandal) => {
+  L.marker([pandal.lat, pandal.lng], { icon: redIcon })
+    .addTo(map)
+    .bindPopup(`<b>${pandal.name}</b>`);
+});
+
+
+function shareWhatsApp(name, link) {
+  const text = `Check out this Durga Puja Pandal: ${name} - ${link}`;
+  window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+}
+
+// ===== Dark Mode Toggle =====
+const darkModeToggle = document.getElementById('darkModeToggle');
+
+darkModeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+
+
+  if(document.body.classList.contains('dark-mode')){
+    darkModeToggle.textContent = '☀️ Light Mode';
+  } else {
+    darkModeToggle.textContent = '🌙 Dark Mode';
+  }
+});
+
+// ===== Back to Top Button =====
+const backToTopBtn = document.getElementById('backToTop');
+
+
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 300){
+    backToTopBtn.style.display = 'block';
+  } else {
+    backToTopBtn.style.display = 'none';
+  }
+});
+
+
+backToTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
