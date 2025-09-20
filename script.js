@@ -353,9 +353,3 @@ backToTopBtn.addEventListener('click', () => {
     behavior: 'smooth'
   });
 });
-
-
-
-
-
-
