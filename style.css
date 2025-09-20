@@ -45,7 +45,6 @@ body {
   }
 }
 
-
 .city-selector {
   text-align: center;
   margin: 2rem 0;
@@ -77,6 +76,7 @@ body {
 }
 
 .card {
+  position: relative; 
   background: white;
   border-radius: 12px;
   overflow: hidden;
@@ -97,6 +97,7 @@ body {
 
 .card-content {
   padding: 1rem;
+  padding-bottom: 3rem; 
 }
 
 .card-content h3 {
@@ -110,18 +111,53 @@ body {
 }
 
 .card-content a {
-  display: inline-block;
-  margin-top: 0.8rem;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
   padding: 0.5rem 1rem;
   background-color: #d81b60;
   color: white;
   text-decoration: none;
   border-radius: 6px;
   transition: background-color 0.3s ease;
+  font-size: 0.9rem;
 }
+
 
 .card-content a:hover {
   background-color: #b71c4f;
+}
+
+.whatsapp-btn {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: #25D366;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden; 
+}
+
+.card:hover .whatsapp-btn {
+  opacity: 1; 
+  visibility: visible; 
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1); 
+}
+
+.whatsapp-btn img {
+  width: 18px;
+  height: 18px;
 }
 
 footer {
@@ -131,8 +167,6 @@ footer {
   color: #333;
   font-size: 0.9rem;
 }
-
-
 
 /* Footer Mismatch */
 html, body {
@@ -151,4 +185,130 @@ main {
 
 footer {
   margin-top: auto; 
+}
+
+.search-container {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+#search {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: 2px solid #a83279;
+  font-size: 1rem;
+  outline: none;
+}
+
+.suggestions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #a83279;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: none;
+  position: absolute;
+  z-index: 100;
+}
+
+.suggestions li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.suggestions li:hover {
+  background: #f2c1e0;
+}
+
+/* DARK MODE BUTTON  */
+.dark-mode-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #ffffffaa;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.dark-mode-btn:hover {
+  background-color: #e0e0e0;
+}
+
+
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode header, body.dark-mode footer {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+body.dark-mode .card {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  border: 1px solid #333;
+}
+
+body.dark-mode .search-container input {
+  background-color: #333;
+  color: #e0e0e0;
+  border: 1px solid #555;
+}
+
+body.dark-mode .suggestions {
+  background-color: #333;
+  border: 1px solid #555;
+}
+
+body.dark-mode .suggestions li:hover {
+  background-color: #444;
+}
+
+body.dark-mode #pandal-list a {
+  color: #9cdcfe; 
+}
+
+body.dark-mode .leaflet-container {
+  filter: brightness(0.8) contrast(1.2);
+}
+
+
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333; 
+  display: none; 
+  z-index: 1000;
+  transition: color 0.3s ease;
+}
+
+#backToTop:hover {
+  color: #000; 
+}
+
+
+body.dark-mode #backToTop {
+  color: #e0e0e0;
+}
+
+body.dark-mode #backToTop:hover {
+  color: #fff;
 }
