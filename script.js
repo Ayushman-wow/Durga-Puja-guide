@@ -241,7 +241,7 @@ document.addEventListener('click', (e) => {
 
 
 //  LEAFLET MAP 
-const map = L.map("route-map").setView([23.7, 86.95], 12);
+const map = L.map("route-map").setView([23.61, 87.1], 11);
 
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution:
