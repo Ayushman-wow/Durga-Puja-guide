@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Durga Puja Guide — Asansol & Durgapur</title>
   <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.min.js"></script>
+
 </head>
 <body>
   <header>
@@ -15,23 +20,26 @@
         <p>Explore Pandals in Asansol & Durgapur</p>
       </div>
     </div>
+<button id="darkModeToggle" class="dark-mode-btn">🌙 Dark Mode</button>
   </header>
-
   <main>
+  <div class="search-container">
+  <input type="text" id="search" placeholder="Search Pandals...">
+  <ul id="suggestions" class="suggestions"></ul>
+</div>
+</div>
     <div class="city-selector">
       <button onclick="render('asansol')">🌆 Asansol</button>
       <button onclick="render('durgapur')">🏙️ Durgapur</button>
     </div>
-
     <div id="pandal-list" class="pandal-list">
-      
     </div>
+  <div id="route-map" style="height: 400px; margin: 20px 0;"></div>
   </main>
-
   <footer>
     <p>Made with ❤️ by Ayushman • For pandal lovers</p>
   </footer>
-
+<button id="backToTop" class="back-to-top">⬆️ </button>
   <script src="script.js"></script>
 </body>
 </html>
